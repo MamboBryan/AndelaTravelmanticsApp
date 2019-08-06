@@ -124,6 +124,8 @@ public class FirebaseUtil {
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
+                        .setTheme(R.style.LoginTheme)
+                        .setLogo(R.drawable.app_logo)
                         .build(),
                 RC_SIGN_IN);
     }
