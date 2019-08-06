@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "359238986733",
+    "firebase_url": "https://travels-26c63.firebaseio.com",
+    "project_id": "travels-26c63",
+    "storage_bucket": "travels-26c63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359238986733:android:9cf9b2e9c0d6ed3a",
+        "android_client_info": {
+          "package_name": "com.mambobryan.travels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359238986733-h9d6uu1i0iutjkqf4c4frj5higi7n9qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mambobryan.travels",
+            "certificate_hash": "9dd4d696a047a78ccf8fa84fc24a3fe3ccad9358"
+          }
+        },
+        {
+          "client_id": "359238986733-5saarhpgrmble7k7kjjalurga6u25jhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3Y3UcjmnB_t1IRVUn7sKArHk7YWlBMVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359238986733-5saarhpgrmble7k7kjjalurga6u25jhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

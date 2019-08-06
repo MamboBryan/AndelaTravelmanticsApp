@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Travels</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_deal_price">Price</string>
+    <string name="hint_deal_title">Deal Title</string>
+    <string name="save_name">save</string>
+    <string name="deals_list_intro">Here are the deals</string>
+    <string name="delete_deal">Delete</string>
+    <string name="new_travel_deal">New Travel Deal</string>
+    <string name="log_out">Logout</string>
+    <string name="upload_image">Upload image</string>
+</resources>
