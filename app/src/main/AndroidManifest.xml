@@ -11,18 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TravelsListActivity"
+        <activity
+            android:name=".ViewTravelDealActivity"
+            android:parentActivityName=".TravelsListActivity"
+            android:theme="@style/LightStatus" />
+
+        <activity
+            android:name=".TravelsListActivity"
+            android:label="Hello there,"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TravelDealEditActivity"
-            android:screenOrientation="portrait">
 
-        </activity>
+        <activity
+            android:name=".TravelDealEditActivity"
+            android:parentActivityName=".TravelsListActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
