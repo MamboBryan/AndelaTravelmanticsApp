@@ -19,7 +19,8 @@
         <activity
             android:name=".TravelsListActivity"
             android:label="Hello there,"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkStatus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.LAUNCHER"/>
