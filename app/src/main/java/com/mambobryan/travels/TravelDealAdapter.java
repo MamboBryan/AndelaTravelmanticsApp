@@ -1,10 +1,7 @@
 package com.mambobryan.travels;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,13 +34,7 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
 
     private ImageView mDealImageView;
 
-    private static Activity caller;
-
-    private static final String LOG_TAG = TravelDealAdapter.class.getName();
-
     public TravelDealAdapter() {
-
-        //FirebaseUtil.openFirebaseReference("traveldeals");
 
         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
         mDatabaseReference = FirebaseUtil.mDatabaseReference;
@@ -55,7 +46,6 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
                 TravelDeal gottenDeal = dataSnapshot.getValue(TravelDeal.class);
-                Log.i(LOG_TAG, "Deal title: " + gottenDeal.getTitle());
                 gottenDeal.setId(dataSnapshot.getKey());
                 mDeals.add(gottenDeal);
 
@@ -113,14 +103,12 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
             implements View.OnClickListener {
 
         TextView tvTitle;
-        //TextView tvDescription;
         TextView tvPrice;
 
         public TravelDealViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.textView_recycler_title);
-            //tvDescription = itemView.findViewById(R.id.textView_recycler_description);
             tvPrice = itemView.findViewById(R.id.textView_recycler_price);
             mDealImageView = itemView.findViewById(R.id.imageView_recycler_image);
 
@@ -129,7 +117,6 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
 
         public void bind(TravelDeal deal) {
             tvTitle.setText(deal.getTitle());
-            //tvDescription.setText(deal.getDescription());
 
             Currency currency = Currency.getInstance(Locale.getDefault());
             tvPrice.setText("Price : " + currency.getSymbol() + " " + deal.getPrice());
@@ -139,7 +126,6 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
         @Override
         public void onClick(View view) {
             int dealPosition = getAdapterPosition();
-            Log.i(LOG_TAG, "Clicked : " + String.valueOf(dealPosition));
 
             TravelDeal selectedTravelDeal = mDeals.get(dealPosition);
 

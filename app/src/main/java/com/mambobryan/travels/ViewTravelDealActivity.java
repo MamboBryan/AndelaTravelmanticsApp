@@ -63,7 +63,7 @@ public class ViewTravelDealActivity extends AppCompatActivity {
         dealDescription.setText(mSelectedDealFromList.getDescription());
         showImage(mSelectedDealFromList.getImageUrl());
 
-        if (!FirebaseUtil.isAdmin){
+        if (!FirebaseUtil.isAdmin) {
 
             editDealButton.setText("Share");
             editDealButton.setOnClickListener(new View.OnClickListener() {
@@ -71,10 +71,11 @@ public class ViewTravelDealActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("message/rfc822");
-                    intent.putExtra(Intent.EXTRA_SUBJECT,mSelectedDealFromList.getTitle());
-                    intent.putExtra(Intent.EXTRA_TEXT,mSelectedDealFromList.getDescription() + "\n" +
-                            "Price : "
-                            + currency.getSymbol() + " " + mSelectedDealFromList.getPrice());
+                    intent.putExtra(Intent.EXTRA_SUBJECT, mSelectedDealFromList.getTitle());
+                    intent.putExtra(Intent.EXTRA_TEXT,
+                            mSelectedDealFromList.getDescription() + "\n" +
+                                    "Price : "
+                                    + currency.getSymbol() + " " + mSelectedDealFromList.getPrice());
                     if (intent.resolveActivity(getPackageManager()) != null) {
                         startActivity(intent);
                     }
@@ -86,7 +87,8 @@ public class ViewTravelDealActivity extends AppCompatActivity {
             editDealButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent myIntent = new Intent(ViewTravelDealActivity.this, TravelDealEditActivity.class);
+                    Intent myIntent = new Intent(ViewTravelDealActivity.this,
+                            TravelDealEditActivity.class);
                     myIntent.putExtra("deal", mSelectedDealFromList);
                     startActivity(myIntent);
                 }

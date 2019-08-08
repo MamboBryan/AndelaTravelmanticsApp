@@ -3,7 +3,6 @@ package com.mambobryan.travels;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -36,7 +35,6 @@ public class TravelDealEditActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseReference;
 
     private static final int PICTURE_RESULT = 42;
-    private static final String LOG_TAG = TravelDealEditActivity.class.getName();
 
     EditText title_TV;
     EditText description_TV;
@@ -92,7 +90,8 @@ public class TravelDealEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveDeal();
-                Toast.makeText(TravelDealEditActivity.this, "Deal saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TravelDealEditActivity.this, "Deal saved",
+                        Toast.LENGTH_SHORT).show();
                 cleanDeal();
                 backToTravelList();
             }
@@ -103,7 +102,8 @@ public class TravelDealEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 deleteDeal();
-                Toast.makeText(TravelDealEditActivity.this, "Deal deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TravelDealEditActivity.this, "Deal deleted",
+                        Toast.LENGTH_SHORT).show();
                 backToTravelList();
             }
         });
@@ -164,7 +164,8 @@ public class TravelDealEditActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Uri> task) {
                                             String url = task.getResult().toString();
                                             mNewDeal.setImageUrl(url);
-                                            mNewDeal.setImageName(taskSnapshot.getStorage().getPath());
+                                            mNewDeal.setImageName(taskSnapshot.getStorage()
+                                                    .getPath());
                                             showImage(url);
                                         }
                                     });
