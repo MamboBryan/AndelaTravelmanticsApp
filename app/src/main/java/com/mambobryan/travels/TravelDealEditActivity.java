@@ -3,21 +3,23 @@ package com.mambobryan.travels;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -47,6 +49,9 @@ public class TravelDealEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deal);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
         mDatabaseReference = FirebaseUtil.mDatabaseReference;
@@ -79,6 +84,27 @@ public class TravelDealEditActivity extends AppCompatActivity {
                 imageUploadIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
                 startActivityForResult(imageUploadIntent.createChooser(imageUploadIntent,
                         "Select Picture"), PICTURE_RESULT);
+            }
+        });
+
+        FloatingActionButton saveDealFab = findViewById(R.id.fab_save_deal);
+        saveDealFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDeal();
+                Toast.makeText(TravelDealEditActivity.this, "Deal saved", Toast.LENGTH_SHORT).show();
+                cleanDeal();
+                backToTravelList();
+            }
+        });
+
+        FloatingActionButton deleteDealFab = findViewById(R.id.fab_delete_deal);
+        deleteDealFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteDeal();
+                Toast.makeText(TravelDealEditActivity.this, "Deal deleted", Toast.LENGTH_SHORT).show();
+                backToTravelList();
             }
         });
     }
@@ -177,7 +203,7 @@ public class TravelDealEditActivity extends AppCompatActivity {
             return;
         }
         mDatabaseReference.child(mNewDeal.getId()).removeValue();
-        if (mNewDeal.getImageName() != null && !mNewDeal.getImageName().isEmpty() ){
+        if (mNewDeal.getImageName() != null && !mNewDeal.getImageName().isEmpty()) {
             StorageReference picRef = FirebaseUtil.mFirebaseStorage.getReference().child(mNewDeal.getImageName());
             picRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

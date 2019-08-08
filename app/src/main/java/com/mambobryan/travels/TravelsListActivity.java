@@ -2,20 +2,26 @@ package com.mambobryan.travels;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
@@ -24,15 +30,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 import static com.mambobryan.travels.FirebaseUtil.attachFirebaseListener;
+import static com.mambobryan.travels.FirebaseUtil.isAdmin;
 
 public class TravelsListActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = "FirebaseTrav";
+    private FloatingActionButton mAddFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travels);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        Toolbar dealsToolbar = findViewById(R.id.dealsToolbar);
+        setSupportActionBar(dealsToolbar);
+
+        mAddFab = findViewById(R.id.add_floatingActionButton);
+        mAddFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(TravelsListActivity.this,
+                        TravelDealEditActivity.class);
+                startActivity(myIntent);
+
+            }
+        });
 
     }
 
@@ -43,8 +68,10 @@ public class TravelsListActivity extends AppCompatActivity {
         inflater.inflate(R.menu.list_activity_menu, menu);
         if (FirebaseUtil.isAdmin) {
             menu.findItem(R.id.new_travel_deal_menu).setVisible(true);
+            mAddFab.setVisibility(View.VISIBLE);
         } else {
             menu.findItem(R.id.new_travel_deal_menu).setVisible(false);
+            mAddFab.setVisibility(View.INVISIBLE);
         }
         return true;
     }

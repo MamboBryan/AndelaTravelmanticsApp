@@ -9,4 +9,7 @@
     <string name="new_travel_deal">New Travel Deal</string>
     <string name="log_out">Logout</string>
     <string name="upload_image">Upload image</string>
+    <string name="best_deal_info">We have the best deals for you</string>
+    <string name="share">share</string>
+    <string name="edit_your_deal">Edit your deal</string>
 </resources>

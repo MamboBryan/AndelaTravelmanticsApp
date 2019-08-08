@@ -3,6 +3,7 @@ package com.mambobryan.travels;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Currency;
+import java.util.Locale;
 
 public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.TravelDealViewHolder> {
 
@@ -88,7 +91,7 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
     public TravelDealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         View itemView = LayoutInflater.from(context)
-                .inflate(R.layout.recycler_list_item, parent, false);
+                .inflate(R.layout.recycler_item, parent, false);
 
         return new TravelDealViewHolder(itemView);
     }
@@ -110,14 +113,14 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
             implements View.OnClickListener {
 
         TextView tvTitle;
-        TextView tvDescription;
+        //TextView tvDescription;
         TextView tvPrice;
 
         public TravelDealViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.textView_recycler_title);
-            tvDescription = itemView.findViewById(R.id.textView_recycler_description);
+            //tvDescription = itemView.findViewById(R.id.textView_recycler_description);
             tvPrice = itemView.findViewById(R.id.textView_recycler_price);
             mDealImageView = itemView.findViewById(R.id.imageView_recycler_image);
 
@@ -126,8 +129,10 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
 
         public void bind(TravelDeal deal) {
             tvTitle.setText(deal.getTitle());
-            tvDescription.setText(deal.getDescription());
-            tvPrice.setText(deal.getPrice());
+            //tvDescription.setText(deal.getDescription());
+
+            Currency currency = Currency.getInstance(Locale.getDefault());
+            tvPrice.setText("Price : " + currency.getSymbol() + " " + deal.getPrice());
             showImage(deal.getImageUrl());
         }
 
@@ -138,16 +143,18 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
 
             TravelDeal selectedTravelDeal = mDeals.get(dealPosition);
 
-            Intent myIntent = new Intent(view.getContext(), TravelDealEditActivity.class);
+            Intent myIntent = new Intent(view.getContext(), ViewTravelDealActivity.class);
             myIntent.putExtra("deal", selectedTravelDeal);
             view.getContext().startActivity(myIntent);
+
+
         }
 
-        private void showImage(String url){
-            if (url != null && !url.isEmpty()){
+        private void showImage(String url) {
+            if (url != null && !url.isEmpty()) {
                 Picasso.get()
                         .load(url)
-                        .resize(160, 160)
+                        .resize(800, 300)
                         .centerCrop()
                         .into(mDealImageView);
             }
