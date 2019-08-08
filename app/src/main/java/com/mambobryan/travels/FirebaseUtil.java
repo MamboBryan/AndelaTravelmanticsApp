@@ -32,13 +32,13 @@ public class FirebaseUtil {
     public static FirebaseAuth.AuthStateListener mAuthStateListener;
 
     public static ArrayList<TravelDeal> mDeals;
-    private static TravelsListActivity caller;
+    private static DealsListActivity caller;
     public static boolean isAdmin;
 
     private FirebaseUtil() {
     }
 
-    public static void openFirebaseReference(String ref, final TravelsListActivity callerActivity) {
+    public static void openFirebaseReference(String ref, final DealsListActivity callerActivity) {
 
         if (firebaseUtil == null) {
 

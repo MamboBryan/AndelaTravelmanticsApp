@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="48dp"
-    tools:context=".ViewTravelDealActivity">
+    tools:context=".DealViewActivity">
 
     <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
         android:id="@+id/viewDealImageView"

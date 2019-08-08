@@ -7,7 +7,7 @@
     android:layout_marginTop="16dp"
     android:layout_marginBottom="@dimen/fui_min_height_target"
     android:background="@android:color/white"
-    tools:context=".TravelsListActivity">
+    tools:context=".DealsListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyler_deals"

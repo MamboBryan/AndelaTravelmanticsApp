@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class TravelsListActivity extends AppCompatActivity {
+public class DealsListActivity extends AppCompatActivity {
 
     private FloatingActionButton mAddFab;
 
@@ -38,8 +38,8 @@ public class TravelsListActivity extends AppCompatActivity {
         mAddFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(TravelsListActivity.this,
-                        TravelDealEditActivity.class);
+                Intent myIntent = new Intent(DealsListActivity.this,
+                        DealEditActivity.class);
                 startActivity(myIntent);
 
             }
@@ -66,7 +66,7 @@ public class TravelsListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.new_travel_deal_menu:
-                Intent myIntent = new Intent(this, TravelDealEditActivity.class);
+                Intent myIntent = new Intent(this, DealEditActivity.class);
                 startActivity(myIntent);
                 return true;
 

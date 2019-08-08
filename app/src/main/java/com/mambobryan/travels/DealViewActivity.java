@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 import java.util.Currency;
 import java.util.Locale;
 
-public class ViewTravelDealActivity extends AppCompatActivity {
+public class DealViewActivity extends AppCompatActivity {
 
     TextView dealTitle;
     TextView dealPrice;
@@ -87,8 +87,8 @@ public class ViewTravelDealActivity extends AppCompatActivity {
             editDealButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent myIntent = new Intent(ViewTravelDealActivity.this,
-                            TravelDealEditActivity.class);
+                    Intent myIntent = new Intent(DealViewActivity.this,
+                            DealEditActivity.class);
                     myIntent.putExtra("deal", mSelectedDealFromList);
                     startActivity(myIntent);
                 }
@@ -114,7 +114,7 @@ public class ViewTravelDealActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.new_travel_deal_menu:
-                Intent myIntent = new Intent(this, TravelDealEditActivity.class);
+                Intent myIntent = new Intent(this, DealEditActivity.class);
                 startActivity(myIntent);
                 return true;
 

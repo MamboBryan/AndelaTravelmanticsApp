@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="16dp"
     android:layout_marginBottom="48dp"
-    tools:context=".TravelDealEditActivity">
+    tools:context=".DealEditActivity">
 
     <EditText
         android:id="@+id/txtTitle"

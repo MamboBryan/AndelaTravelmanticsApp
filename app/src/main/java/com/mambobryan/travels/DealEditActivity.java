@@ -29,7 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class TravelDealEditActivity extends AppCompatActivity {
+public class DealEditActivity extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
@@ -46,7 +46,7 @@ public class TravelDealEditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deal);
+        setContentView(R.layout.activity_edit_deal);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -90,7 +90,7 @@ public class TravelDealEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveDeal();
-                Toast.makeText(TravelDealEditActivity.this, "Deal saved",
+                Toast.makeText(DealEditActivity.this, "Deal saved",
                         Toast.LENGTH_SHORT).show();
                 cleanDeal();
                 backToTravelList();
@@ -102,7 +102,7 @@ public class TravelDealEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 deleteDeal();
-                Toast.makeText(TravelDealEditActivity.this, "Deal deleted",
+                Toast.makeText(DealEditActivity.this, "Deal deleted",
                         Toast.LENGTH_SHORT).show();
                 backToTravelList();
             }
@@ -220,7 +220,7 @@ public class TravelDealEditActivity extends AppCompatActivity {
     }
 
     private void backToTravelList() {
-        Intent myIntent = new Intent(this, TravelsListActivity.class);
+        Intent myIntent = new Intent(this, DealsListActivity.class);
         startActivity(myIntent);
     }
 

@@ -129,7 +129,7 @@ public class TravelDealAdapter extends RecyclerView.Adapter<TravelDealAdapter.Tr
 
             TravelDeal selectedTravelDeal = mDeals.get(dealPosition);
 
-            Intent myIntent = new Intent(view.getContext(), ViewTravelDealActivity.class);
+            Intent myIntent = new Intent(view.getContext(), DealViewActivity.class);
             myIntent.putExtra("deal", selectedTravelDeal);
             view.getContext().startActivity(myIntent);
 
