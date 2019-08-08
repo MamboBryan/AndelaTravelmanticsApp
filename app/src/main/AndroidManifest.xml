@@ -5,24 +5,33 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TravelsListActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".ViewTravelDealActivity"
+            android:parentActivityName=".TravelsListActivity"
+            android:theme="@style/LightStatus" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity
+            android:name=".TravelsListActivity"
+            android:label="Hello there,"
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkStatus">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TravelDealEditActivity"
-            android:screenOrientation="portrait">
 
-        </activity>
+        <activity
+            android:name=".TravelDealEditActivity"
+            android:theme="@style/DarkStatus"
+            android:parentActivityName=".TravelsListActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
