@@ -12,12 +12,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".ViewTravelDealActivity"
-            android:parentActivityName=".TravelsListActivity"
+            android:name=".DealViewActivity"
+            android:parentActivityName=".DealsListActivity"
             android:theme="@style/LightStatus" />
 
         <activity
-            android:name=".TravelsListActivity"
+            android:name=".DealsListActivity"
             android:label="Hello there,"
             android:screenOrientation="portrait"
             android:theme="@style/DarkStatus">
@@ -28,9 +28,9 @@
         </activity>
 
         <activity
-            android:name=".TravelDealEditActivity"
+            android:name=".DealEditActivity"
             android:theme="@style/DarkStatus"
-            android:parentActivityName=".TravelsListActivity"
+            android:parentActivityName=".DealsListActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
