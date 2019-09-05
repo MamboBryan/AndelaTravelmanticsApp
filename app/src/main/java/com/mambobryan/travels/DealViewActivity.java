@@ -26,11 +26,11 @@ import java.util.Locale;
 
 public class DealViewActivity extends AppCompatActivity {
 
-    TextView dealTitle;
-    TextView dealPrice;
-    TextView dealDescription;
-    ImageView dealImageView;
-    Button editDealButton;
+    private TextView dealTitle;
+    private TextView dealPrice;
+    private TextView dealDescription;
+    private ImageView dealImageView;
+    private Button editDealButton;
     private TravelDeal mSelectedDealFromList;
 
     @Override

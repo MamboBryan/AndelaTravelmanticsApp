@@ -37,7 +37,7 @@
                 app:shape_mode="round_rect" />
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="match_parent" android:contentDescription="TODO" 
                 android:layout_height="match_parent"
                 android:background="#80000000"
                 android:alpha="0.8"/>
@@ -49,7 +49,7 @@
                 android:layout_above="@id/textView_recycler_price"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-black"
+                android:layout_marginStart="16dp" android:fontFamily="sans-serif-black"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/white"
                 android:textSize="24sp"
@@ -64,7 +64,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="16dp" android:layout_alignParentStart="true" android:fontFamily="sans-serif-medium"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/paleWhite"
                 tools:text="20000" />
