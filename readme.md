@@ -15,7 +15,7 @@ I have used the following components for development:
 - RecyclerView
 
 ###### For app demo [click here](https://appetize.io/app/d0a5dbrjgxdhb5hy8t1tzt0qum?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
-###### For final app apk [click here](https://drive.google.com/open?id=1jn339O3c6l9jyo1NCQSA0bQDib0sorDu) to download
+###### For final app apk [click here](https://drive.google.com/open?id=1kB6fX1G8yefe2B3NbompxBmjPJrnhGtR) to download
 
 ## Prerequisites
 You will need the following to run this project:
