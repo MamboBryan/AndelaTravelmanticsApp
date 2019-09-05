@@ -36,10 +36,10 @@ public class DealEditActivity extends AppCompatActivity {
 
     private static final int PICTURE_RESULT = 42;
 
-    EditText title_TV;
-    EditText description_TV;
-    EditText price_TV;
-    ImageView image_IV;
+    private EditText title_TV;
+    private EditText description_TV;
+    private EditText price_TV;
+    private ImageView image_IV;
 
     private TravelDeal mNewDeal;
 

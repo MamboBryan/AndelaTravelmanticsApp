@@ -62,7 +62,7 @@
         android:inputType="textMultiLine"
         android:padding="8dp"
         android:paddingLeft="8dp"
-        android:paddingTop="32dp"
+        android:paddingStart="8dp" android:paddingTop="32dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonUploadImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

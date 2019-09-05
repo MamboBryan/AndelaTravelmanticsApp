@@ -6,7 +6,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_logo"
-        android:label="@string/app_name"
+        android:label="Travelmantics"
         android:roundIcon="@mipmap/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -22,16 +22,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/DarkStatus">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".DealEditActivity"
-            android:theme="@style/DarkStatus"
             android:parentActivityName=".DealsListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkStatus" />
 
         <meta-data
             android:name="preloaded_fonts"
