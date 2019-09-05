@@ -16,7 +16,8 @@ public class TravelDeal implements Serializable {
     public TravelDeal() {
     }
 
-    public TravelDeal(String title, String price, String description, String imageUrl, String imageName) {
+    public TravelDeal(String title, String price, String description,
+                      String imageUrl, String imageName) {
         mTitle = title;
         mDescription = description;
         mPrice = price;
